@@ -13,7 +13,6 @@ Please follow the following steps:
 This is a simple todo app that's connected to a Firebase Cloud Firestore. It can perform user authentication using Firebase.
 
 ## Folder Structure
-
 ```
 lib
 ├───api
