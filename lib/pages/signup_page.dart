@@ -13,6 +13,8 @@ class _SignUpState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
   String? email;
   String? password;
+  String? firstName;
+  String? lastName;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +27,14 @@ class _SignUpState extends State<SignUpPage> {
               key: _formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [heading, emailField, passwordField, submitButton],
+                children: [heading, fNField, lNField, emailField, passwordField, submitButton],
               ),
             )),
       ),
     );
   }
 
+  
   Widget get heading => const Padding(
         padding: EdgeInsets.only(bottom: 30),
         child: Text(
@@ -39,6 +42,44 @@ class _SignUpState extends State<SignUpPage> {
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
       );
+
+
+  // Exercise 9
+  Widget get fNField => Padding(
+      padding: const EdgeInsets.only(bottom: 30),
+      child: TextFormField(
+        decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            label: Text("First Name"),
+            hintText: "Enter your first name"),
+        onSaved: (value) => setState(() => firstName = value),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "Please enter your name";
+          }
+          return null;
+        },
+      ),
+    );
+
+
+  Widget get lNField => Padding(
+      padding: const EdgeInsets.only(bottom: 30),
+      child: TextFormField(
+        decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            label: Text("Last Name"),
+            hintText: "Enter your last name"),
+        onSaved: (value) => setState(() => lastName = value),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return "Please enter your name";
+          }
+          return null;
+        },
+      ),
+    );
+
 
   Widget get emailField => Padding(
         padding: const EdgeInsets.only(bottom: 30),
@@ -50,6 +91,7 @@ class _SignUpState extends State<SignUpPage> {
           onSaved: (value) => setState(() => email = value),
           validator: (value) {
             if (value == null || value.isEmpty) {
+              // check for a valid email format. ? how to check for a valid email format?
               return "Please enter a valid email format";
             }
             return null;

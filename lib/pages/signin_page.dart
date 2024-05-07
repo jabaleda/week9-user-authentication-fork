@@ -52,10 +52,8 @@ class _SignInPageState extends State<SignInPage> {
   Widget get emailField => Padding(
         padding: const EdgeInsets.only(bottom: 30),
         child: TextFormField(
-          decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              label: Text("Email"),
-              hintText: "juandelacruz09@gmail.com"),
+          decoration:
+              const InputDecoration(border: OutlineInputBorder(), label: Text("Email"), hintText: "juandelacruz09@gmail.com"),
           onSaved: (value) => setState(() => email = value),
           validator: (value) {
             if (value == null || value.isEmpty) {
@@ -69,10 +67,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget get passwordField => Padding(
         padding: const EdgeInsets.only(bottom: 30),
         child: TextFormField(
-          decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              label: Text("Password"),
-              hintText: "******"),
+          decoration: const InputDecoration(border: OutlineInputBorder(), label: Text("Password"), hintText: "******"),
           obscureText: true,
           onSaved: (value) => setState(() => password = value),
           validator: (value) {
@@ -96,13 +91,15 @@ class _SignInPageState extends State<SignInPage> {
       onPressed: () async {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
-          
+
           // authService.signIn returns void
 
           // String? message = await context
           //     .read<UserAuthProvider>()
           //     .authService
           //     .signIn(email!, password!);
+
+          await context.read<UserAuthProvider>().authService.signIn(email!, password!);
 
           // print(message);
           // print(showSignInErrorMessage);
@@ -126,10 +123,7 @@ class _SignInPageState extends State<SignInPage> {
             const Text("No account yet?"),
             TextButton(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignUpPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpPage()));
                 },
                 child: const Text("Sign Up"))
           ],

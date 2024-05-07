@@ -38,3 +38,10 @@ lib
 - Models - contains the data model used
 - Pages - contains the pages/widgets used
 - Providers - contains the Todo provider that contains the data and method logic
+
+BONUS
+1. strong passwords - capital, numbers, special char
+2. connect todos to respective accounts
+
+Signed in 
+1. aaa@a.com - 123456ABC
