@@ -1,13 +1,32 @@
 {
   "project_info": {
-    "project_number": "97869778981",
-    "project_id": "week9-user-authentication",
-    "storage_bucket": "week9-user-authentication.appspot.com"
+    "project_number": "236220258448",
+    "project_id": "cmsc23-todo-app-jabaleda",
+    "storage_bucket": "cmsc23-todo-app-jabaleda.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:97869778981:android:ed5cc80da6f5f59089efcc",
+        "mobilesdk_app_id": "1:236220258448:android:a8455f0a7bb12a5d2ce015",
+        "android_client_info": {
+          "package_name": "com.example.week7_networking_discussion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApfaspINkkmDDdvSEjH4dDg-nTuIUdgqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236220258448:android:bff9f595d9eab1a82ce015",
         "android_client_info": {
           "package_name": "com.example.week9_authentication"
         }
@@ -15,7 +34,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC6heRq0Ed-GWb_Dnfi67VRz4QTeJRHp08"
+          "current_key": "AIzaSyApfaspINkkmDDdvSEjH4dDg-nTuIUdgqE"
         }
       ],
       "services": {

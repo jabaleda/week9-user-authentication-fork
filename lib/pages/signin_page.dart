@@ -96,21 +96,24 @@ class _SignInPageState extends State<SignInPage> {
       onPressed: () async {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
-          String? message = await context
-              .read<UserAuthProvider>()
-              .authService
-              .signIn(email!, password!);
+          
+          // authService.signIn returns void
 
-          print(message);
-          print(showSignInErrorMessage);
+          // String? message = await context
+          //     .read<UserAuthProvider>()
+          //     .authService
+          //     .signIn(email!, password!);
 
-          setState(() {
-            if (message != null && message.isNotEmpty) {
-              showSignInErrorMessage = true;
-            } else {
-              showSignInErrorMessage = false;
-            }
-          });
+          // print(message);
+          // print(showSignInErrorMessage);
+
+          // setState(() {
+          //   if (message != null && message.isNotEmpty) {
+          //     showSignInErrorMessage = true;
+          //   } else {
+          //     showSignInErrorMessage = false;
+          //   }
+          // });
         }
       },
       child: const Text("Sign In"));
